@@ -1,0 +1,36 @@
+
+    [
+    {
+      "keyname": "Module 1: Installing Visual Studio Code",
+      "createdAt": "2024-02-13T08:30:00.000Z",
+      "videos": [
+        {
+          "title": "Installing Visual Studio Code",
+          "url": "https://www.youtube.com/watch?v=fJEbVCrEMSE&ab_channel=codeSTACKr"
+        },
+        {
+          "title": "Introduction to VS Code Features",
+          "url": "https://www.youtube.com/watch?v=tVzUXW6siu0&ab_channel=CodeWithHarry"
+        }
+      ]
+    },
+    {
+      "keyname": "Module 2: Getting Started with HTML CSS",
+      "createdAt": "2024-02-14T09:00:00.000Z",
+      "videos": [
+        {
+          "title": "Complete HTML and CSS Playlist",
+          "url": "https://www.youtube.com/watch?v=TKYsuU86-DQ&list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU&ab_channel=DaniKrossing"
+        },
+        {
+          "title": "Doc's and Tutorial For HTML",
+          "url": "https://www.w3schools.com/html/default.asp"
+        },
+        {
+          "title": "Doc's and Tutorial For CSS",
+          "url": "https://www.w3schools.com/css/default.asp"
+        }
+      ]
+    }
+  ]
+  

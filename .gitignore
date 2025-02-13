@@ -6,9 +6,9 @@
 .pnp.js
 
 # Ignore credentials and course data
-/public/credentials.json
-/public/courseData.json
 frontend/course/public/courseData.json
+frontend/course/public/credentials.json
+
 
 # testing
 /coverage
