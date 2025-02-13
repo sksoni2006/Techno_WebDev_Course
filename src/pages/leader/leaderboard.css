@@ -1,0 +1,75 @@
+/* Leaderboard Container */
+.leaderboard-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Leaderboard Header */
+  .leaderboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .leaderboard-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Table Wrapper for Responsive Design */
+  .leaderboard-wrapper {
+    overflow-x: auto;
+  }
+  
+  /* Table Styling */
+  .leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  
+  /* Sticky Header */
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    background: #2c3e50;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+  }
+  
+  /* Table Borders & Row Alternation */
+  .leaderboard-table th, .leaderboard-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .leaderboard-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+  
+  /* Hover Effect */
+  .leaderboard-table tbody tr:hover {
+    background: #ecf0f1;
+  }
+  
+  /* Checkmark Styling */
+  .checkmark-icon {
+    color: green;
+    font-size: 18px;
+  }
+  
+  /* No Data Message */
+  .no-data {
+    font-style: italic;
+    color: #777;
+  }
+  
