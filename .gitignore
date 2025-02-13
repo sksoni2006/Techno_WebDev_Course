@@ -8,7 +8,7 @@
 # Ignore credentials and course data
 /public/credentials.json
 /public/courseData.json
-
+frontend/course/public/courseData.json
 
 # testing
 /coverage

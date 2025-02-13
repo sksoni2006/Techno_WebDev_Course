@@ -72,4 +72,7 @@
     font-style: italic;
     color: #777;
   }
-  
+.highlighted {
+  background-color: #f0f8ff; /* Light blue highlight */
+  font-weight: bold;
+}

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/ui/button";
 import { Check } from "lucide-react";
 import { toast } from "sonner";
-import "./leaderboard.css"; // Import the separate CSS file
+import "./leaderboard.css";
 
 const ASSIGNMENTS = ["Assignment 1", "Assignment 2", "Assignment 3", "Assignment 4"];
 
@@ -15,8 +15,8 @@ const Leader = () => {
 
   const navigate = useNavigate();
   const [leaderboard, setLeaderboard] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
-  // Fetch data from credentials.json instead of API
   useEffect(() => {
     fetch("/credentials.json")
       .then((res) => res.json())
@@ -27,8 +27,13 @@ const Leader = () => {
       .catch((error) => {
         console.error("❌ Error loading leaderboard:", error);
         toast.error("Failed to load leaderboard");
-        setLeaderboard([]); // Fallback to an empty array
+        setLeaderboard([]);
       });
+
+    const savedUser = localStorage.getItem("loggedInUser");
+    if (savedUser) {
+      setLoggedInUser(JSON.parse(savedUser));
+    }
   }, []);
 
   return (
@@ -51,7 +56,10 @@ const Leader = () => {
           <tbody>
             {Array.isArray(leaderboard) && leaderboard.length > 0 ? (
               leaderboard.map((user, userIndex) => (
-                <tr key={userIndex} className="leaderboard-row">
+                <tr
+                  key={userIndex}
+                  className={`leaderboard-row ${loggedInUser && loggedInUser.name === user.name ? "highlighted" : ""}`}
+                >
                   <td>{user.name}</td>
                   {user.completedAssignments.map((status, assignmentIndex) => (
                     <td key={assignmentIndex} className="text-center">

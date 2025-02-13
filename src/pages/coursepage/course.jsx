@@ -15,29 +15,27 @@ const Course = () => {
       ? "https://technothlon.techniche.org.in/leaderboard"
       : "http://localhost:3000/leaderboard";
 
-  // Load course data and completion status on component mount
   useEffect(() => {
-    // Fetch courses from local JSON instead of API
     fetch("/courseData.json")
       .then((res) => res.json())
       .then((data) => {
-        setCourseContent(data);
+        setCourseContent(data || []);
         console.log("📚 Loaded course data:", data);
       })
-      .catch((error) => console.error("❌ Error loading course data:", error));
+      .catch((error) => {
+        console.error("❌ Error loading course data:", error);
+        setCourseContent([]);
+      });
 
-    // Load completion status from localStorage
     const savedStatus = JSON.parse(localStorage.getItem("completionStatus")) || {};
     setCompletionStatus(savedStatus);
   }, []);
 
-  // Handle checkbox click: Toggle and save state in localStorage
   const handleCheckboxChange = (keyname, videoIndex) => {
     const newStatus = {
       ...completionStatus,
-      [`${keyname}-${videoIndex}`]: !completionStatus[`${keyname}-${videoIndex}`]
+      [`${keyname}-${videoIndex}`]: !completionStatus[`${keyname}-${videoIndex}`],
     };
-    
     setCompletionStatus(newStatus);
     localStorage.setItem("completionStatus", JSON.stringify(newStatus));
   };
@@ -47,45 +45,59 @@ const Course = () => {
       <div className="course-content">
         <div className="course-header">
           <h1>Course Structure</h1>
-          <Button onClick={() => (window.location.href = redirectUrl)}>Back to Dashboard</Button>
+          <Button onClick={() => (window.location.href = redirectUrl)}>
+            Back to Dashboard
+          </Button>
         </div>
 
         <div className="course-grid">
-          {courseContent.map((section, index) => (
-            <Card key={index} className="course-card">
-              <h2>{section.keyname} <span className="date">({new Date(section.createdAt).toLocaleDateString()})</span></h2>
-              <div className="table-wrapper">
-                <table className="fancy-table">
-                  <thead>
-                    <tr>
-                      <th>Video Title</th>
-                      <th>Link</th>
-                      <th>Completed</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {section.links.map((link, videoIndex) => (
-                      <tr key={videoIndex}>
-                        <td>Video {videoIndex + 1}</td>
-                        <td>
-                          <a href={link} target="_blank" rel="noopener noreferrer" className="video-link">
-                            Watch <ExternalLink size={16} />
-                          </a>
-                        </td>
-                        <td>
-                          <input
-                            type="checkbox"
-                            checked={completionStatus[`${section.keyname}-${videoIndex}`] || false}
-                            onChange={() => handleCheckboxChange(section.keyname, videoIndex)}
-                          />
-                        </td>
+          {courseContent.length > 0 ? (
+            courseContent.map((section, index) => (
+              <Card key={index} className="course-card">
+                <h2>
+                  {section.keyname} <span className="date">({new Date(section.createdAt).toLocaleDateString()})</span>
+                </h2>
+                <div className="table-wrapper">
+                  <table className="fancy-table">
+                    <thead>
+                      <tr>
+                        <th>Video Title</th>
+                        <th>Link</th>
+                        <th>Completed</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Card>
-          ))}
+                    </thead>
+                    <tbody>
+                      {section.videos && Array.isArray(section.videos) ? (
+                        section.videos.map((video, videoIndex) => (
+                          <tr key={videoIndex}>
+                            <td>{video.title}</td>
+                            <td>
+                              <a href={video.url} target="_blank" rel="noopener noreferrer" className="video-link">
+                                Watch <ExternalLink size={16} />
+                              </a>
+                            </td>
+                            <td>
+                              <input
+                                type="checkbox"
+                                checked={completionStatus[`${section.keyname}-${videoIndex}`] || false}
+                                onChange={() => handleCheckboxChange(section.keyname, videoIndex)}
+                              />
+                            </td>
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td colSpan="3">No videos available</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </Card>
+            ))
+          ) : (
+            <p>Loading course data...</p>
+          )}
         </div>
       </div>
     </div>
@@ -93,8 +105,6 @@ const Course = () => {
 };
 
 export default Course;
-
-
 
 
 // import { useState, useEffect } from "react";
