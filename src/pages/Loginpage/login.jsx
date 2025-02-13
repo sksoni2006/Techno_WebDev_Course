@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Loginpage = () => {
   const redirectUrl = process.env.NODE_ENV === "production"
-    ? "https://technothlon.techniche.org.in/leaderboard"
+    ? "https://techno-web-dev-course.vercel.app/leaderboard"
     : "http://localhost:3000/leaderboard";
 
   const [username, setUsername] = useState('');

@@ -10,7 +10,7 @@ const ASSIGNMENTS = ["Assignment 1", "Assignment 2", "Assignment 3", "Assignment
 const Leader = () => {
   const redirectUrl =
     process.env.NODE_ENV === "production"
-      ? "https://technothlon.techniche.org.in/leaderboard"
+      ? "https://techno-web-dev-course.vercel.app/CourseStructure"
       : "http://localhost:3000/CourseStructure";
 
   const navigate = useNavigate();
