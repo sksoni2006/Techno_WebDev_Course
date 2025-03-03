@@ -2,7 +2,7 @@
     [
     {
       "keyname": "Module 1: Installing Visual Studio Code",
-      "createdAt": "2024-02-13T08:30:00.000Z",
+      "createdAt": "2025-02-13T08:30:00.000Z",
       "videos": [
         {
           "title": "Installing Visual Studio Code",
@@ -16,7 +16,7 @@
     },
     {
       "keyname": "Module 2: Getting Started with HTML CSS",
-      "createdAt": "2024-02-14T09:00:00.000Z",
+      "createdAt": "2025-02-14T09:00:00.000Z",
       "videos": [
         {
           "title": "Complete HTML and CSS Playlist",
@@ -30,6 +30,29 @@
           "title": "Doc's and Tutorial For CSS",
           "url": "https://www.w3schools.com/css/default.asp"
         }
+      ]
+    },
+    {
+      "keyname": "Module 2: Javascript-Basic to Advanced",
+      "createdAt": "2025-03-04T01:00:00.000Z",
+      "videos": [
+        {
+          "title": "[Week-1]:Complete Javascript Playlist ",
+          "url": "https://www.youtube.com/watch?v=ItYye9h_RXg&list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB&ab_channel=DaniKrossing"
+        },
+        {
+          "title": "[Week-2]:Javascript Async",
+          "url": "https://youtu.be/ZYb_ZU8LNxs?feature=shared"
+        },
+        {
+          "title": "[Reference]:Doc's and Tutorial For Javascript",
+          "url": "https://www.w3schools.com/js/DEFAULT.asp"
+        },
+        {
+          "title": "or Follow Code with Harry [vedio 54-83]",
+          "url": "https://www.youtube.com/watch?v=NrhP53Divco&list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&index=54&ab_channel=CodeWithHarry"
+        }
+
       ]
     }
   ]
