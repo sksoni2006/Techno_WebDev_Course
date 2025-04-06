@@ -9,7 +9,6 @@
 # /public/credentials.json
 
 # Ignore credentials and course data
-/public/credentials.json
 /public/courseData.json
 
 # testing
