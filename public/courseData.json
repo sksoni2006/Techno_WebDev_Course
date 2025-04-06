@@ -58,6 +58,31 @@
         }
 
       ]
+    },
+    {
+      "keyname": "Module 3: React for Frontend Development",
+      "createdAt": "2025-04-07T01:00:00.000Z",
+      "videos": [
+        {
+          "title": "[Week-1]:React Fundamentals & Component Architecture [Videos 1–25]",
+          "url": "https://www.youtube.com/watch?v=QFaFIcGhPoM&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=1&ab_channel=Codevolution"
+        },
+        {
+          "title": "[Week-2]:Intermediate React-Optimization, Refs & Patterns [Videos 26-43]",
+          "url": "https://www.youtube.com/watch?v=YCRuTT31qR0&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=26&ab_channel=Codevolution"
+        },
+        {
+          "title": "[Week-3]:React Hooks Deep Dive [Videos 44-76]",
+          "url": "https://www.youtube.com/watch?v=VUN8crQ8U6g&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=44&ab_channel=Codevolution"
+        },
+        {
+          "title": "[Week-4]:Capstone Project - Coming Soon..."
+        }
+
+      ]
     }
+
+
+
   ]
   
